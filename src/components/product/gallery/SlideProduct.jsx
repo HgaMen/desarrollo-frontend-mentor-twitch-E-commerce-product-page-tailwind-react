@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import PrevIcon from '@/components/icons/PrevIcon';
 import NextIcon from '@/components/icons/NextIcon';
@@ -13,10 +13,6 @@ export default ({
 }) => {
   const btnSlider = useRef(null);
   const [index, setIndex] = useState(0);
-
-  // useEffect(() => {
-  //   isOpenModal && btnSlider.current.classList.remove('md:hidden');
-  // }, [isOpenModal]);
 
   const handleClickNext = () => {
     index === ARRAY_IMGS.length - 1 ? setIndex(0) : setIndex(index + 1);
@@ -37,7 +33,7 @@ export default ({
         <img
           src={ARRAY_IMGS[index]}
           alt=""
-          className="aspect-[16/13] w-full md:aspect-[16/18] md:cursor-pointer md:rounded-md"
+          className="aspect-[16/13] w-full md:aspect-[16/18] md:cursor-pointer md:rounded-md xl:aspect-[16/16] 2xl:max-h-[600px]"
           onClick={handleOpenModal}
         />
         <div
